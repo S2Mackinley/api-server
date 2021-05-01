@@ -26,5 +26,14 @@
     "mongoose": "^5.12.5",
     "nodemon": "^2.0.7",
     "supertest": "^4.0.2"
-  }
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "systemBinary": "/opt/homebrew/bin/mongod",
+      "arch": "x64",
+      "disablePostinstall": "1",
+      "version": "4.4.2",
+      "debug": "0"
+    }
+}
 }
