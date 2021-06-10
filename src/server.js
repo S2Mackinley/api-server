@@ -16,14 +16,19 @@ const logger = require('./middleware/logger');
 const foodRouter = require('./routes/food');
 //this pulls in the clothes router
 const clothesRouter = require('./routes/clothes');
+//this pulls in the product router
+const productRouter = require('./routes/product');
 
-//middlware that parses both json and url encoded
+//middlWare that parses both json and url encoded
 app.use(express.json());
 app.use(cors());
 app.use(logger);
 // ROUTES
 app.use(foodRouter);
 app.use(clothesRouter);
+app.use(productRouter);
+
+//Proof of life
 app.get('/', (req, res) => {
 	res.send('hello world');
 });
@@ -35,6 +40,6 @@ app.use(errors);
 module.exports = {
 	server: app,
 	start: (port) => {
-		app.listen(port, () => console.log(`server is up and rocking on: ${port}`));
+		app.listen(port, () => console.log(`Server is up at: ${port}`));
 	},
 };
